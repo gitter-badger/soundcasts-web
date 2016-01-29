@@ -29,6 +29,7 @@ function push(directory, branch, message) {
     'git --work-tree ' + directory + ' add --all',
     'git --work-tree ' + directory + ' commit -m "some commit message"',
     'git push origin ' + branch + ' --force',
+    'git checkout -',
     'git branch -D ' + branch
   ].join(' && ');
 
