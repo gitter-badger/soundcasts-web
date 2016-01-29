@@ -25,11 +25,11 @@ function deploy(directory, branch) {
 function push(directory, branch, message) {
   var cmd = [
     'npm run ' + directory,
-    'git branch -D ' + branch,
     'git --work-tree ' + directory + ' checkout --orphan ' + branch,
     'git --work-tree ' + directory + ' add --all',
     'git --work-tree ' + directory + ' commit -m "some commit message"',
     'git push origin ' + branch + ' --force',
+    'git branch -D ' + branch
   ].join(' && ');
 
   return new Promise(function(resolve, reject) {
