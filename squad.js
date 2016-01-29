@@ -35,8 +35,10 @@ function push(directory, branch, message) {
   return new Promise(function(resolve, reject) {
     exec(cmd, function(error, stdout, stderr) {
       if (error || stderr) {
+        console.log('err');
         reject();
       } else {
+        console.log('ah', stdout);
         resolve();
       }
     });
